@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environnements virtuels
+venv/
+env/
+.venv
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.Trashes
+Thumbs.db
+
+# Données (optionnel - à garder si nécessaire pour le projet)
+# data/
+# output/
+
+# Fichiers générés
+*.pdf
+!rapport.pdf
+
+# Minis Projets.pdf (énoncé)
+Minis Projets.pdf
+

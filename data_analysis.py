@@ -132,5 +132,5 @@ def visualize_data(df):
     plt.savefig('output/7_segment_marche.png', dpi=300, bbox_inches='tight')
     plt.close()
     
-    print("   ✅ Tous les graphiques ont été créés avec succès!")
+    print("   Tous les graphiques ont été créés")
 

@@ -1,18 +1,22 @@
-# Projet Python - Analyse des Réservations Hôtelières
+# Analyse Exploratoire de la Demande Hôtelière
 
-## 📋 Description
+## Description
 
-Ce projet effectue une analyse complète des données de réservations hôtelières. Il inclut le nettoyage des données, l'analyse statistique et la création de visualisations pour mieux comprendre les tendances et les comportements des clients.
+Projet d'analyse exploratoire des données de réservations hôtelières comparant les **City Hotels** et **Resort Hotels**. 
 
-## 🎯 Objectifs
+**Projet :** 8PRO408 - Outils de programmation pour la science des données  
+**Dataset :** Hotel Booking Demand (119,390 réservations, 32 variables)
 
-- Nettoyer et préparer les données pour l'analyse
-- Analyser les tendances de réservations
-- Identifier les facteurs influençant les annulations
-- Visualiser les données pour une meilleure compréhension
-- Générer des statistiques clés sur les réservations
+## Objectifs
 
-## 📦 Installation
+- Explorer la structure et la qualité des données
+- Comparer les deux types d'hôtels sur plusieurs indicateurs
+- Étudier les comportements de réservation (saisonnalité, durée, prix, annulation)
+- Identifier les profils de clients et leurs comportements
+- Produire des visualisations pertinentes (statistiques et interactives)
+- Résumer les observations dans un rapport analytique
+
+## Installation
 
 ### Prérequis
 
@@ -23,108 +27,159 @@ Ce projet effectue une analyse complète des données de réservations hôteliè
 
 1. **Cloner ou télécharger le projet**
 
-2. **Installer les dépendances**
+2. **Créer un environnement virtuel (recommandé)**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # Sur Linux/macOS
+   # venv\Scripts\activate   # Sur Windows
+   ```
+
+3. **Installer les dépendances**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Télécharger le dataset**
-   
+4. **Télécharger le dataset**
    - Lien: https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand
    - Téléchargez le fichier `hotel_bookings.csv`
    - Placez-le dans le dossier `data/` (créez le dossier si nécessaire)
 
-## 🚀 Utilisation
+## Utilisation
 
-### Exécuter l'analyse complète
+### Option 1 : Notebook Jupyter (Analyse complète)
 
+Lancez Jupyter Notebook :
 ```bash
-python main.py
+jupyter notebook
 ```
 
-Le script va:
-1. Charger les données depuis `data/hotel_bookings.csv`
-2. Nettoyer et préparer les données
-3. Effectuer l'analyse statistique
-4. Générer les visualisations dans le dossier `output/`
+Ouvrez le fichier `analyse_hotels.ipynb` et exécutez toutes les cellules. Le notebook contient :
+1. Exploration du dataset
+2. Comparaison City Hotel vs Resort Hotel
+3. Analyse temporelle
+4. Analyse des comportements clients
+5. Visualisations obligatoires (Matplotlib/Seaborn et Plotly)
+6. Synthèse des résultats
 
-### Structure du projet
+### Option 2 : Application Streamlit (Interface interactive)
+
+Lancez l'application Streamlit :
+```bash
+streamlit run app.py
+```
+
+L'application offre :
+- Filtres interactifs (type d'hôtel, année, mois)
+- Statistiques dynamiques
+- Visualisations Plotly interactives
+- Sélection de graphiques à afficher
+
+### Option 3 : Scripts Python (Analyse basique)
+
+Exécutez l'analyse basique avec les scripts Python :
+```bash
+python3 main.py
+```
+
+### Génération du rapport PDF
+
+Pour générer le rapport PDF de synthèse :
+```bash
+python3 generate_rapport.py
+```
+
+Le rapport sera sauvegardé dans `rapport.pdf`.
+
+## Structure du projet
 
 ```
 python-projet-finale/
 │
-├── main.py                 # Script principal
-├── data_cleaning.py        # Module de nettoyage des données
-├── data_analysis.py        # Module d'analyse et visualisation
-├── requirements.txt        # Dépendances Python
-├── README.md              # Documentation du projet
+├── analyse_hotels.ipynb      # Notebook Jupyter complet
+├── app.py                    # Application Streamlit
+├── main.py                   # Script principal (analyse basique)
+├── data_cleaning.py          # Module de nettoyage des données
+├── data_analysis.py          # Module d'analyse et visualisation
+├── generate_rapport.py       # Script de génération du rapport PDF
+├── requirements.txt          # Dépendances Python
+├── README.md                 # Ce fichier
 │
-├── data/                  # Données (à télécharger depuis Kaggle)
+├── data/                     # Données (à télécharger depuis Kaggle)
 │   └── hotel_bookings.csv
 │
-└── output/                # Résultats de l'analyse
-    ├── 1_taux_annulation.png
-    ├── 2_distribution_prix.png
-    ├── 3_reservations_par_mois.png
-    ├── 4_duree_sejour.png
-    ├── 5_top_pays.png
-    ├── 6_correlation_matrix.png
-    └── 7_segment_marche.png
+├── output/                   # Résultats de l'analyse (graphiques PNG)
+│   └── *.png
+│
+└── rapport.pdf               # Rapport PDF de synthèse (généré)
 ```
 
-## 📊 Fonctionnalités
-
-### Nettoyage des données
-- Suppression des doublons
-- Gestion des valeurs manquantes
-- Conversion des types de données
-- Calcul de nouvelles variables (durée de séjour, nombre de personnes, revenu total)
-- Suppression des valeurs aberrantes
+## Fonctionnalités
 
 ### Analyses effectuées
-- Statistiques descriptives
-- Taux d'annulation par type d'hôtel
-- Analyse des prix moyens journaliers (ADR)
-- Tendances saisonnières
-- Analyse géographique (pays d'origine)
-- Analyse des segments de marché
-- Analyse de corrélation entre variables
 
-### Visualisations générées
-1. **Taux d'annulation par type d'hôtel** - Compare les taux d'annulation entre City Hotel et Resort Hotel
-2. **Distribution des prix** - Histogramme montrant la distribution des prix moyens journaliers
-3. **Réservations par mois** - Tendances saisonnières des réservations
-4. **Durée de séjour moyenne** - Comparaison entre les types d'hôtels
-5. **Top 10 pays** - Les pays d'origine les plus fréquents
-6. **Matrice de corrélation** - Corrélations entre les variables numériques clés
-7. **Segment de marché** - Répartition des réservations par segment
+1. **Exploration du dataset**
+   - Aperçu des colonnes, types, valeurs manquantes
+   - Détection des doublons
+   - Nettoyage minimal des données
 
-## 📈 Résultats attendus
+2. **Comparaison City Hotel vs Resort Hotel**
+   - Taux d'annulation
+   - Prix moyen (ADR)
+   - Durée des séjours (weekend/weeknights)
+   - Répartition des types de clients
 
-Après exécution, vous obtiendrez:
-- Des statistiques résumées dans la console
-- 7 graphiques haute résolution sauvegardés dans `output/`
-- Une meilleure compréhension des tendances de réservations
+3. **Analyse temporelle**
+   - Saisonnalité (mois, semaines)
+   - Tendances 2015-2017
+   - Lead time (délais entre réservation et arrivée)
 
-## 🛠️ Technologies utilisées
+4. **Analyse des comportements clients**
+   - Nombre d'adultes/enfants/bébés
+   - Demandes spéciales
+   - Types de dépôts (deposit_type)
+   - Agents et entreprises
+
+5. **Visualisations**
+   - Histogrammes / countplots / boxplots (Seaborn/Matplotlib)
+   - Visualisations interactives (Plotly)
+   - Graphiques comparatifs entre les deux hôtels
+
+6. **Synthèse**
+   - Résultats et tendances clés
+   - Limites des données
+   - Pistes pour modélisation future
+
+## Technologies utilisées
 
 - **Python 3** - Langage de programmation
 - **Pandas** - Manipulation et analyse de données
 - **NumPy** - Calculs numériques
 - **Matplotlib** - Visualisation de données
 - **Seaborn** - Visualisations statistiques avancées
+- **Plotly** - Visualisations interactives
+- **Streamlit** - Interface web interactive
+- **Jupyter** - Notebooks interactifs
+- **ReportLab** - Génération de PDF
 
-## 📝 Notes
+## Livrables
+
+- **Notebook Jupyter** (`analyse_hotels.ipynb`) - Analyse complète et propre
+- **Rapport PDF** (`rapport.pdf`) - Synthèse 1-2 pages (à générer avec `generate_rapport.py`)
+- **Application Streamlit** (`app.py`) - Visualisations interactives
+- **README.md** - Documentation du projet
+
+## Notes
 
 - Les données doivent être placées dans le dossier `data/` avant l'exécution
-- Le dossier `output/` sera créé automatiquement lors de l'exécution
-- Les graphiques sont sauvegardés en format PNG haute résolution (300 DPI)
+- Le dossier `output/` sera créé automatiquement lors de l'exécution des scripts Python
+- Les graphiques Plotly dans le notebook et l'app Streamlit sont interactifs
+- Le rapport PDF peut être régénéré à tout moment avec `generate_rapport.py`
 
-## 👤 Auteur
+## Contact
 
-Projet réalisé dans le cadre d'un cours Python
+**Chargé de Cours :** HN Doukaga, hndoukag@uqac.ca  
+**Cours :** 8PRO408 - Outils de programmation pour la science des données
 
-## 📄 Licence
+## Licence
 
-Ce projet est fourni à titre éducatif.
-
+Ce projet est fourni à titre éducatif dans le cadre d'un cours universitaire.

@@ -46,18 +46,18 @@ def clean_data(df):
 
 def get_data_info(df):
     """Affiche les informations générales sur le dataset"""
-    print("\n📊 Informations sur le dataset:")
-    print(f"   • Forme: {df.shape[0]} lignes × {df.shape[1]} colonnes")
-    print(f"   • Mémoire utilisée: {df.memory_usage(deep=True).sum() / 1024**2:.2f} MB")
-    print(f"\n📋 Colonnes du dataset:")
+    print("\nInformations sur le dataset:")
+    print(f"  Forme: {df.shape[0]} lignes × {df.shape[1]} colonnes")
+    print(f"  Mémoire utilisée: {df.memory_usage(deep=True).sum() / 1024**2:.2f} MB")
+    print(f"\nColonnes du dataset:")
     for col in df.columns:
-        print(f"   • {col}: {df[col].dtype}")
+        print(f"  - {col}: {df[col].dtype}")
     
-    print(f"\n🔍 Valeurs manquantes:")
+    print(f"\nValeurs manquantes:")
     missing = df.isnull().sum()
     if missing.sum() > 0:
         for col, count in missing[missing > 0].items():
-            print(f"   • {col}: {count} ({count/len(df)*100:.2f}%)")
+            print(f"  - {col}: {count} ({count/len(df)*100:.2f}%)")
     else:
-        print("   Aucune valeur manquante!")
+        print("  Aucune valeur manquante")
 
