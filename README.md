@@ -48,10 +48,34 @@ Projet d'analyse exploratoire des données de réservations hôtelières compara
 
 ### Option 1 : Notebook Jupyter (Analyse complète)
 
+**Important :** Avant de lancer Jupyter, assurez-vous que toutes les dépendances sont installées :
+```bash
+pip install -r requirements.txt
+```
+
 Lancez Jupyter Notebook :
 ```bash
 jupyter notebook
 ```
+
+**Configuration du kernel :** Si vous obtenez une erreur `ModuleNotFoundError`, suivez ces étapes :
+
+1. **Vérifiez votre environnement** :
+   ```bash
+   python3 check_environment.py
+   ```
+
+2. **Assurez-vous d'utiliser le bon kernel dans Jupyter** :
+   - Dans Jupyter Notebook, cliquez sur "Kernel" → "Change Kernel"
+   - Sélectionnez "Python 3.13 (Projet Finale)" (le kernel spécifique créé pour ce projet)
+   - Ou utilisez le kernel Python par défaut qui pointe vers votre environnement Python 3.13
+
+3. **Si le kernel n'apparaît pas**, créez-le :
+   ```bash
+   python3 -m ipykernel install --user --name=python-projet-finale --display-name="Python 3.13 (Projet Finale)"
+   ```
+
+4. **Redémarrez le kernel** si nécessaire : "Kernel" → "Restart Kernel"
 
 Ouvrez le fichier `analyse_hotels.ipynb` et exécutez toutes les cellules. Le notebook contient :
 1. Exploration du dataset
