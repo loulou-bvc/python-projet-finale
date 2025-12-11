@@ -93,29 +93,7 @@ Lancez l'application Streamlit :
 ```bash
 streamlit run app.py
 ```
-
-**Hébergement sur Streamlit Cloud :**
-
-Pour héberger l'application sur Streamlit Cloud (gratuit) :
-
-1. **Vérifiez que tout est sur GitHub :**
-   - ✅ `app.py` (fichier principal)
-   - ✅ `requirements.txt` (dépendances)
-   - ✅ `data/hotel_bookings.csv` (dataset)
-
-2. **Connectez votre repo GitHub à Streamlit Cloud :**
-   - Allez sur https://share.streamlit.io/
-   - Connectez-vous avec votre compte GitHub
-   - Cliquez sur "New app"
-   - Sélectionnez votre repository : `loulou-bvc/python-projet-finale`
-   - Main branch : `main`
-   - App file : `app.py`
-   - Cliquez sur "Deploy"
-
-3. **Votre app sera accessible** à une URL du type :
-   ```
-   https://python-projet-finale.streamlit.app
-   ```
+ou consulter directement depuis l'hergement en ligne via le lien : https://python-projet-finale-3wuhjiowc4ivrm9bjrg478.streamlit.app/
 
 L'application offre :
 - Filtres interactifs (type d'hôtel, année, mois)
