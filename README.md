@@ -7,10 +7,6 @@ Projet d'analyse exploratoire des données de réservations hôtelières compara
 **Projet :** 8PRO408 - Outils de programmation pour la science des données  
 **Dataset :** Hotel Booking Demand (119,390 réservations, 32 variables)
 
-## Colaborateurs
-Loup
-Frantxa Cabrejos, CAB016105000
-
 ## Objectifs
 
 - Explorer la structure et la qualité des données
